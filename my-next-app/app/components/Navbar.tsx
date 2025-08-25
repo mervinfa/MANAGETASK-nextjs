@@ -2,17 +2,21 @@
 import { useState } from "react";
 import TaskList from "./TaskList";
 
-export default function Navbar() {
-  const [tasks,setTasks] = useState<string[]>([]);
+type NavbarProps ={
+  addTask: (task:string)=> void;
+}
+
+export default function Navbar({addTask}:NavbarProps) {
+  // const [tasks,setTasks] = useState<string[]>([]);
   const [showform, setShowForm] = useState(false);
   const [input, setInput] = useState("");
 
   
-  
-  const addTask = (e: React.FormEvent) => {
+  const submitTask = (e: React.FormEvent) => {
     e.preventDefault();
     if(!input.trim()) return;
-    setTasks([...tasks, input])
+    addTask(input);
+    // setTasks([...tasks, input])
     setInput("")
     setShowForm(false)
   };
@@ -46,7 +50,7 @@ export default function Navbar() {
 
         {showform && (
           <div>
-            <form onSubmit={addTask} className="mt-4 space-y-2">
+            <form onSubmit={submitTask} className="mt-4 space-y-2">
             <input
               type="text"
               value={input}
@@ -61,7 +65,7 @@ export default function Navbar() {
               Add Task
             </button>
           </form>
-            <TaskList tasks={tasks} />
+            {/* <TaskList tasks={tasks} /> */}
               </div>
         )}
 
