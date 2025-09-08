@@ -1,6 +1,10 @@
 "use client";
+
 import { useState } from "react";
+import CalendarPage from "./CalendarPage"
 // import TaskList from "./TaskList";
+
+
 
 type NavbarProps ={
   addTask: (task:string)=> void;
@@ -85,7 +89,7 @@ export default function Navbar({addTask}:NavbarProps) {
           <span>Search</span>
         </a>
 
-        <a href="#" className="flex items-center space-x-2">
+        <a href="/calendar" className="flex items-center space-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -99,7 +103,7 @@ export default function Navbar({addTask}:NavbarProps) {
               clipRule="evenodd"
             />
           </svg>
-          <span>Today</span>
+          <span>Calendar</span>
         </a>
       </nav>
     

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import TaskList from "./components/TaskList";
+import CalendarPage from "./components/CalendarPage"
 
 
 export default function Home() {
@@ -14,9 +15,10 @@ export default function Home() {
 
   return (
     <div className="bg-[#FFFBDE] min-h-screen flex">
-      <Navbar addTask={addTask} />
+      {/* <Navbar addTask={addTask} /> */}
     <main className="bg-[#FFFBDE] min-h-screen flex">
       <TaskList tasks={tasks}/>
+    
     </main>
     </div>
   );
