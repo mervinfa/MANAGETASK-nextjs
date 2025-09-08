@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex bg-[#FFFBDE] min-h-screen`} 
       >
-         <Navbar addTask={(task) => console.log("Task added:", task)} />
+         <Navbar />
         {children}
       </body>
     </html>

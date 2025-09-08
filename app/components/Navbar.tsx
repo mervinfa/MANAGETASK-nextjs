@@ -2,37 +2,38 @@
 
 import { useState } from "react";
 import CalendarPage from "./CalendarPage"
+import Link from "next/link";
 // import TaskList from "./TaskList";
 
 
 
-type NavbarProps ={
-  addTask: (task:string)=> void;
-}
+// type NavbarProps ={
+//   addTask: (task:string)=> void;
+// }
 
-export default function Navbar({addTask}:NavbarProps) {
+export default function Navbar({/*{addTask}:NavbarProps*/}) {
   // const [tasks,setTasks] = useState<string[]>([]);
-  const [showform, setShowForm] = useState(false);
-  const [input, setInput] = useState("");
+  // const [showform, setShowForm] = useState(false);
+  // const [input, setInput] = useState("");
 
   
-  const submitTask = (e: React.FormEvent) => {
-    e.preventDefault();
-    if(!input.trim()) return;
-    addTask(input);
-    // setTasks([...tasks, input])
-    setInput("")
-    setShowForm(false)
-  };
-  const toggleClick = () => {
-    setShowForm(!showform);
-  };
+  // const submitTask = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if(!input.trim()) return;
+  //   addTask(input);
+  //   // setTasks([...tasks, input])
+  //   setInput("")
+  //   setShowForm(false)
+  // };
+  // const toggleClick = () => {
+  //   setShowForm(!showform);
+  // };
 
     return (
       <nav className="flex flex-col h-screen space-y-2 w-fit px-44 bg-[#91C8E4] pl-10 p-4 text-black text-xl font-semibold">
         <a
           href="#"
-          onClick={toggleClick}
+          // onClick={toggleClick}
           className="flex items-center space-x-2"
         >
           <svg
@@ -52,7 +53,7 @@ export default function Navbar({addTask}:NavbarProps) {
           <span>Add Task</span>
         </a>
 
-        {showform && (
+        {/* {showform && (
           <div>
             <form onSubmit={submitTask} className="mt-4 space-y-2">
             <input
@@ -69,9 +70,9 @@ export default function Navbar({addTask}:NavbarProps) {
               Add Task
             </button>
           </form>
-            {/* <TaskList tasks={tasks} /> */}
+            {/* <TaskList tasks={tasks} /> 
               </div>
-        )}
+        )} */}
 
         <a href="#" className="flex items-center space-x-2">
           <svg
